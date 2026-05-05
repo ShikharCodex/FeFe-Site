@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FeFe‑Script — The Quirky 3D Language</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Three.js canvas will be inserted here -->
+    <div id="canvas-container"></div>
+
+    <!-- Overlay content -->
+    <div class="content">
+      <!-- Header -->
+      <header>
+        <div class="container nav">
+          <div class="logo">🐶 FeFe‑Script</div>
+          <nav>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#install">Install</a>
+            <a href="#docs">Docs</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <!-- Hero -->
+        <section class="hero">
+          <div class="container">
+            <h1>The <span class="highlight">Quirky</span> Language</h1>
+            <p class="typewriter" id="typewriter"></p>
+            <div class="install-box">
+              <code>npm install -g fefe-script</code>
+              <a href="#install" class="btn">Get Started</a>
+            </div>
+            <div class="terminal">
+              <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="terminal-body">
+                <span class="kw">fe</span> name =
+                <span class="str">"World"</span>;<br />
+                <span class="kw">bork</span>
+                <span class="str">"Hello, "</span> + name +
+                <span class="str">"!"</span>;
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="fade-section">
+          <div class="container">
+            <h2>What is FeFe‑Script?</h2>
+            <p>
+              A tiny, hand‑crafted scripting language where you
+              <code>sniff</code> conditions, <code>zoom</code> through loops,
+              and <code>bork</code> your messages. It’s a fully working
+              tree‑walk interpreter written in JavaScript. Perfect for learning
+              language design – or just for pure, unadulterated fun.
+            </p>
+          </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features">
+          <div class="container">
+            <h2>Features</h2>
+            <div class="features-grid">
+              <div class="card fade-section">
+                <div class="card-icon">😂</div>
+                <h3>Crazy Syntax</h3>
+                <p>
+                  Rewrite your brain – <code>sniff / woof</code> for if/else,
+                  <code>zoom</code> for while, <code>boop</code> for functions.
+                </p>
+              </div>
+              <div class="card fade-section">
+                <div class="card-icon">🧠</div>
+                <h3>Real Interpreter</h3>
+                <p>
+                  Lexer, parser, evaluator – all in clean, modular JavaScript. A
+                  perfect learning resource.
+                </p>
+              </div>
+              <div class="card fade-section">
+                <div class="card-icon">⚡</div>
+                <h3>Straightforward</h3>
+                <p>
+                  No classes, no modules, no async. Just a single file with
+                  everything you need to run your <code>.fe</code> scripts.
+                </p>
+              </div>
+              <div class="card fade-section">
+                <div class="card-icon">🦒</div>
+                <h3>Simple and Easy</h3>
+                <p>
+                  Designed for beginners. Minimal syntax. Focus on learning
+                  concepts, not wrestling with complex features.
+                </p>
+              </div>
+              <div class="card fade-section">
+                <div class="card-icon">🪸</div>
+                <h3>Zero Dependencies</h3>
+                <p>
+                  No external packages. Works everywhere Node.js runs. Install
+                  globally in seconds.
+                </p>
+              </div>
+              <div class="card fade-section">
+                <div class="card-icon">🎨</div>
+                <h3>VS Code Extension</h3>
+                <p>
+                  Syntax highlighting for *.fe files – because your code
+                  deserves to look as good as it sounds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Full‑width Installation Section -->
+        <section id="install" class="fade-section install-section">
+          <div class="install-wrapper">
+            <div class="install-content container">
+              <h2>Ready to Bork?</h2>
+              <p class="install-sub">
+                Install FeFe‑Script globally on your machine and start writing
+                <code>.fe</code> files in seconds. No dependencies, no complex
+                setup.
+              </p>
+
+              <div class="install-grid">
+                <!-- Step‑by‑Step -->
+                <div class="steps">
+                  <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                      <h4>Make sure Node.js is installed</h4>
+                      <p>
+                        FeFe‑Script runs on Node.js. Grab it from
+                        <a href="https://nodejs.org" target="_blank"
+                          >nodejs.org</a
+                        >
+                        (v18 or higher).
+                      </p>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                      <h4>Install FeFe‑Script globally</h4>
+                      <p>
+                        Open your terminal and run the command below. That’s it
+                        — you’re now a FeFe developer.
+                      </p>
+                      <div class="code-copy-box">
+                        <code>npm install -g fefe-script</code>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                      <h4>Create your first <code>.fe</code> file</h4>
+                      <p>
+                        Write some FeFe code, save it as <code>hello.fe</code>,
+                        and run it with <code>fefe hello.fe</code>.
+                      </p>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-large">Read the Docs →</a>
+                </div>
+
+                <!-- Demo Code Block -->
+                <div class="demo-code">
+                  <div class="terminal">
+                    <div class="terminal-header">
+                      <span class="dot red"></span
+                      ><span class="dot yellow"></span
+                      ><span class="dot green"></span>
+                      <span class="terminal-title">hello.fe</span>
+                    </div>
+                    <div class="terminal-body">
+                      <span class="cmt">// Your first FeFe‑Script program</span
+                      ><br />
+                      <span class="kw">fe</span> name =
+                      <span class="str">"FeFe World"</span>;<br />
+                      <span class="kw">bork</span>
+                      <span class="str">"Hello, "</span> + name +
+                      <span class="str">"!"</span>;<br /><br />
+                      <span class="cmt">// Conditionals with sniff / woof</span
+                      ><br />
+                      <span class="kw">sniff</span> (name !=
+                      <span class="str">""</span>) {<br />
+                      &nbsp;&nbsp;<span class="kw">bork</span>
+                      <span class="str">"Welcome!"</span>;<br />
+                      } <span class="kw">woof</span> {<br />
+                      &nbsp;&nbsp;<span class="kw">bork</span>
+                      <span class="str">"Who's there?"</span>;<br />
+                      }<br />
+                      <span class="kw">// Output: Hello, FeFe World!</span
+                      ><br />
+                      <span class="kw">// Welcome!</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Docs -->
+        <section id="docs">
+          <div class="container">
+            <h2>Language Reference</h2>
+            <div class="table-wrapper fade-section">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Keyword</th>
+                    <th>Purpose</th>
+                    <th>Example</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>fe</code></td>
+                    <td>Declare variable</td>
+                    <td><code>fe x = 10;</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>bork</code></td>
+                    <td>Print to console</td>
+                    <td><code>bork "Hi";</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>sniff</code></td>
+                    <td>If statement</td>
+                    <td><code>sniff (x > 0) { ... }</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>woof</code></td>
+                    <td>Else clause</td>
+                    <td><code>woof { ... }</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>zoom</code></td>
+                    <td>While loop</td>
+                    <td><code>zoom (i < 3) { ... }</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>boop</code></td>
+                    <td>Function</td>
+                    <td><code>boop add(a,b) { yip a+b; }</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>yip</code></td>
+                    <td>Return</td>
+                    <td><code>yip value;</code></td>
+                  </tr>
+                  <tr>
+                    <td><code>yes</code> / <code>nope</code></td>
+                    <td>Booleans</td>
+                    <td><code>fe flag = yes;</code></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>and</code> / <code>or</code> / <code>not</code>
+                    </td>
+                    <td>Logic</td>
+                    <td><code>sniff (a and b) { ... }</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <p>
+            🐾 FeFe‑Script — MIT License.
+            <a href="https://www.npmjs.com/package/fefe-script" target="_blank"
+              >npm</a
+            >
+            · <a href="#">VS Code Extension</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

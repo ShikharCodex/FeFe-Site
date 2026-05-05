@@ -1,0 +1,441 @@
+/* ---- RESET & BASE ---- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text: #eaeaea;
+  --text-muted: #9b9bb0;
+  --accent: #c084fc;
+  --accent2: #f472b6;
+  --border: rgba(255, 255, 255, 0.1);
+  --radius: 12px;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text);
+  background: #0b0b1a;
+  overflow-x: hidden;
+}
+
+/* Three.js canvas container (fullscreen background) */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Content sits on top of 3D canvas */
+.content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+section {
+  padding: 5rem 0;
+}
+.text-center {
+  text-align: center;
+}
+
+/* ---- HEADER ---- */
+header {
+  background: rgba(11, 11, 26, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+nav {
+  display: flex;
+  gap: 2rem;
+}
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ---- HERO ---- */
+.hero {
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+.highlight {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.typewriter {
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 500;
+  min-height: 2rem;
+}
+.install-box {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(22, 22, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1.5rem;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.install-box code {
+  background: none;
+  color: var(--text);
+}
+.btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
+}
+
+/* Terminal mock */
+.terminal {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  background: rgba(14, 14, 32, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: left;
+}
+.terminal-header {
+  padding: 0.6rem 1rem;
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.red {
+  background: #ff5f56;
+}
+.yellow {
+  background: #ffbd2e;
+}
+.green {
+  background: #27c93f;
+}
+.terminal-body {
+  padding: 1.5rem;
+  font-family: "Fira Code", monospace;
+  color: #cdd6f4;
+  font-size: 0.95rem;
+}
+.kw {
+  color: #cba6f7;
+}
+.str {
+  color: #a6e3a1;
+}
+
+/* ---- ABOUT ---- */
+#about p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* ---- FEATURES ---- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.card {
+  background: rgba(22, 22, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(192, 132, 252, 0.2);
+}
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  margin-bottom: 0.7rem;
+}
+.card p {
+  color: var(--text-muted);
+}
+
+/* ---------- FULL‑WIDTH INSTALL SECTION ---------- */
+.install-section {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  position: relative;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.install-wrapper {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(192, 132, 252, 0.07) 0%,
+    rgba(244, 114, 182, 0.07) 100%
+  );
+  backdrop-filter: blur(5px);
+  padding: 6rem 0;
+}
+
+.install-content {
+  text-align: center;
+}
+
+.install-sub {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.install-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  text-align: left;
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.step {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.step-number {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-weight: 800;
+  font-size: 1.2rem;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step h4 {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+.step p {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.code-copy-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+.code-copy-box code {
+  background: none;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.btn-large {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+/* Demo terminal */
+.demo-code .terminal {
+  margin: 0;
+  max-width: 100%;
+}
+
+.terminal-title {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive – stack on small screens */
+@media (max-width: 768px) {
+  .install-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .install-wrapper {
+    padding: 4rem 0;
+  }
+  .steps {
+    order: 1;
+  }
+  .demo-code {
+    order: 0;
+  }
+}
+
+/* ---- TABLE ---- */
+.table-wrapper {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(22, 22, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  white-space: nowrap;
+}
+th,
+td {
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+thead th {
+  background: rgba(192, 132, 252, 0.15);
+  font-weight: 600;
+}
+tr {
+  border-bottom: 1px solid var(--border);
+}
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---- SCROLL ANIMATIONS ---- */
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  nav {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .install-box {
+    flex-direction: column;
+  }
+}
